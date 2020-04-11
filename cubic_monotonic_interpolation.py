@@ -11,8 +11,11 @@ https://en.wikipedia.org/wiki/Monotone_cubic_interpolation
 
 
 def create_interpolant(points):
-    xs = points[:, 0]
-    ys = points[:, 1]
+    copy_points = np.copy(points)
+    new_indices = np.argsort(points[:, 0])
+    sorted_points = copy_points[new_indices]
+    xs = sorted_points[:, 0]
+    ys = sorted_points[:, 1]
 
     # Get consecutive differences and slopes
     dys = []
