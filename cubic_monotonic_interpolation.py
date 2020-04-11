@@ -3,6 +3,13 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 
+
+"""
+Algorithm was taken from the javascript implementation at:
+https://en.wikipedia.org/wiki/Monotone_cubic_interpolation
+"""
+
+
 def create_interpolant(points):
     xs = points[:, 0]
     ys = points[:, 1]
